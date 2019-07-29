@@ -1,0 +1,22 @@
+{
+  "presets": [
+    ["env", {
+      "targets": {
+        "browsers": ["last 10 versions", "ie >= 9"]
+      },
+      "useBuiltIns": "usage"
+      }],
+    "react",
+    "stage-2"
+  ],
+  "plugins": [
+    ["import", {
+      "libraryName": "doraemon",
+      "style": true
+    }],
+    "transform-decorators-legacy",
+    "transform-runtime",
+    "syntax-dynamic-import",
+    "react-hot-loader/babel"
+  ],
+}
