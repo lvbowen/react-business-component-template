@@ -13,12 +13,12 @@ debug('合并webpack dev 环境配置');
 const devConfig = {
   mode: 'development',
   entry: {
-    index: ['react-hot-loader/patch', path.join(__dirname, '..', 'examples', 'index.js')],
+    index: path.join(__dirname, '..', 'examples', 'index.js'),
   },
   output: {
     filename: '[name].js',
     chunkFilename: '[name].chunk.js',
-		path: path.resolve(__dirname, '../lib')
+		path: path.resolve(__dirname, '../lib'),
 	},
 	devtool: 'cheap-module-eval-source-map',
 	module: {
@@ -52,7 +52,7 @@ const devConfig = {
     open: true, // 服务启动后 打开浏览器
     hot: true,
     inline: true,
-    hotOnly: true,
+    // hotOnly: true,   // 要去掉，否则页面不能及时刷新
     before(app) {
       apiMocker(app, path.resolve('./mockData/index.js'),
         {

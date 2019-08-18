@@ -43,24 +43,6 @@ const commonConfig = {
   },
 }
 
-const libConfig = {
-  entry: {
-		index: './src/index.js',
-	},	
-  output: {
-		filename: '[name].js',
-		path: path.resolve(__dirname, '../lib'),
-		libraryTarget: 'umd'
-  },
-  externals: ['react', 'react-dom', '@zcy/doraemon'],
-	plugins: [
-		new MiniCssExtractPlugin({
-			filename: '[name].css',
-			chunkFilename: '[name].chunk.css'
-		}),
-	]
-}
-
 const previewConfig = {
 	entry: {
 		index: path.join(__dirname, '..', 'examples', 'index.js'),
@@ -83,9 +65,8 @@ const previewConfig = {
 	]
 }
 
-const assignLibConfig = Object.assign({}, commonConfig, libConfig);
 const assignPreviewConfig = Object.assign({}, commonConfig, previewConfig);
 
 debug('合并webpack prod 环境配置成功');
 
-module.exports = [merge(baseWebpackConfig, assignLibConfig), merge(baseWebpackConfig, assignPreviewConfig)];
+module.exports = merge(baseWebpackConfig, assignPreviewConfig);

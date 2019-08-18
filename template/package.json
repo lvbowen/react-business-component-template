@@ -8,8 +8,9 @@
   ],
   "scripts": {
     "dev": "DEBUG=app:* webpack-dev-server --config ./build/webpack.dev.conf.js",
-    "build": "DEBUG=app:* webpack --config ./build/webpack.prod.conf.js",
-    "lib": "DEBUG=app:* webpack --config ./build/webpack.lib.conf.js"
+    "dist": "DEBUG=app:* webpack --config ./build/webpack.prod.conf.js",
+    "lib": "rm -rf lib && babel src -d lib --copy-files",
+    "build": "npm run dist && npm run lib"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
   "devDependencies": {
     "@zcy/html-base-data": "^1.1.1",
     "autoprefixer": "^7.2.5",
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.2",
     "babel-loader": "^7.1.2",
@@ -70,12 +72,12 @@
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss-import": "^11.1.0",
     "postcss-loader": "^2.1.5",
-    "react-hot-loader": "^4.8.4",
     "redbox-react": "^1.5.0",
     "request": "^2.87.0",
     "style-loader": "^0.19.1",
     "stylelint": "^9.3.0",
     "stylelint-config-standard": "^18.2.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "url-loader": "^0.6.2",
     "webpack": "^4.30.0",
     "webpack-api-mocker": "^1.6.6",

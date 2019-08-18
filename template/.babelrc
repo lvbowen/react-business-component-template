@@ -17,6 +17,5 @@
     "transform-decorators-legacy",
     "transform-runtime",
     "syntax-dynamic-import",
-    "react-hot-loader/babel"
   ],
 }
