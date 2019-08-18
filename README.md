@@ -16,3 +16,4 @@
 - webpack 打包技巧
   - webpack.prod.conf.js 导出（module.exports） 一个配置数组可以实现打包出不同的文件夹
   - 打包一个库时 output 要配置 libraryTarget: 'umd'
+  - devServer 的 hotOnly: true 属性会使页面即时刷新功能（webpack-dev-server 的 --hot 模式）失效，最好去掉；react-hot-loader 是局部刷新（页面不会刷新）
