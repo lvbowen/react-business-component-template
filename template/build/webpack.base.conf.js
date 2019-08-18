@@ -1,5 +1,6 @@
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const debug = require('debug')('app:config:base');
 
 debug('创建webpack base配置');
@@ -35,10 +36,23 @@ module.exports = {
 		},{
       test: /\.hbs$/,
       loader: 'handlebars-loader',
-    }]
+    }],
 	},
 	plugins: [
-		new CleanWebpackPlugin()
+		new CleanWebpackPlugin(),
+		new UglifyJSPlugin({
+      uglifyOptions: {
+        warning: 'verbose',
+        ecma: 6,
+        beautify: false,
+        compress: false,
+        comments: false,
+        mangle: false,
+        toplevel: false,
+        keep_classnames: true,
+        keep_fnames: true,
+      },
+    }),
 	],
 	optimization: {
 		usedExports: true,

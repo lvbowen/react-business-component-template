@@ -8,7 +8,8 @@
   ],
   "scripts": {
     "dev": "DEBUG=app:* webpack-dev-server --config ./build/webpack.dev.conf.js",
-    "build": "DEBUG=app:* webpack --config ./build/webpack.prod.conf.js"
+    "build": "DEBUG=app:* webpack --config ./build/webpack.prod.conf.js",
+    "lib": "DEBUG=app:* webpack --config ./build/webpack.lib.conf.js"
   },
   "repository": {
     "type": "git",
