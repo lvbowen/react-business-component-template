@@ -1,6 +1,6 @@
 ## react business component template
 
-> 用于对接zoo cli命令行工具的脚手架模版
+> 用于对接cli命令行工具的脚手架模版
 
 ### 工程目录
 
